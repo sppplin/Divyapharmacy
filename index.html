@@ -178,15 +178,15 @@ img{max-width:100%;display:block;}
 .testi-wrap{position:relative;}
 .testi-track{overflow:hidden;}
 .testi-inner{display:flex;gap:20px;transition:transform .4s ease;}
-.testi-card{flex:0 0 calc(33.33% - 14px);background:#fff;border-radius:12px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;}
+.testi-card{flex:0 0 calc(33.33% - 14px);background:#fff;border-radius:12px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);}
 @media(max-width:900px){.testi-card{flex:0 0 calc(50% - 10px);}}
 @media(max-width:600px){.testi-card{flex:0 0 calc(100% - 0px);}}
-.testi-quote{font-size:32px;color:var(--green-mid);line-height:1;margin-bottom:10px;font-family:'Playfair Display',serif;text-align:center;}
-.testi-text{font-size:13px;color:var(--text-m);line-height:1.7;margin-bottom:14px;font-style:italic;text-align:center;}
-.testi-stars{color:var(--gold);font-size:13px;margin-bottom:8px;text-align:center;}
-.testi-name{font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;justify-content:center;gap:6px;}
+.testi-quote{font-size:32px;color:var(--green-mid);line-height:1;margin-bottom:10px;font-family:'Playfair Display',serif;}
+.testi-text{font-size:13px;color:var(--text-m);line-height:1.7;margin-bottom:14px;font-style:italic;}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:8px;}
+.testi-name{font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:6px;}
 .testi-name i{color:var(--green-mid);font-size:14px;}
-.testi-prod{font-size:11px;color:var(--text-l);margin-top:3px;text-decoration:underline;cursor:pointer;text-align:center;}
+.testi-prod{font-size:11px;color:var(--text-l);margin-top:3px;text-decoration:underline;cursor:pointer;}
 .testi-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:18px;}
 .tn-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:#fff;font-size:14px;color:var(--green-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
 .tn-btn:hover{border-color:var(--green-mid);color:var(--green-mid);}
@@ -212,16 +212,22 @@ img{max-width:100%;display:block;}
 .svc-lbl{font-size:12px;font-weight:600;color:var(--green-dark);}
 
 /* ====== SHOP & WATCH ====== */
-.watch-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none;}
+.watch-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding-bottom:8px;}
+@media(max-width:1024px){.watch-row{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:768px){.watch-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none;}}
 .watch-row::-webkit-scrollbar{display:none;}
-.wcard{flex-shrink:0;width:130px;border-radius:10px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow);}
-.wcard-thumb{height:180px;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.wcard{border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;}
+.wcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);}
+@media(max-width:768px){.wcard{flex-shrink:0;width:160px;}}
+.wcard-thumb{height:240px;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+@media(max-width:768px){.wcard-thumb{height:200px;}}
 .wcard-thumb .prod-img-box{width:100%;height:100%;border-radius:0;}
-.wplay{position:absolute;width:38px;height:38px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.wplay i{font-size:14px;color:var(--green-dark);margin-left:3px;}
-.wcard-info{padding:8px;background:#fff;}
-.wcard-info p{font-size:10.5px;font-weight:500;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:6px;line-height:1.4;}
-.wcard-add{width:100%;padding:5px;background:var(--green-btn);color:#fff;border:none;border-radius:5px;font-size:10px;font-weight:600;cursor:pointer;}
+.wplay{position:absolute;width:46px;height:46px;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+.wplay i{font-size:17px;color:var(--green-dark);margin-left:3px;}
+.wcard-info{padding:10px;background:#fff;}
+.wcard-info p{font-size:12px;font-weight:500;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px;line-height:1.4;}
+.wcard-add{width:100%;padding:7px;background:var(--green-btn);color:#fff;border:none;border-radius:6px;font-size:11.5px;font-weight:600;cursor:pointer;transition:.2s;}
+.wcard-add:hover{background:var(--green-btn-h);}
 
 /* ====== SKIN TYPE / HEALTH TYPE ====== */
 .stype-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -511,6 +517,36 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 .view-all-wrap{text-align:center;margin-top:22px;}
 .btn-va{border:2px solid var(--green-mid);color:var(--green-mid);background:none;padding:10px 32px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;}
 .btn-va:hover{background:var(--green-mid);color:#fff;}
+
+/* ====== TRACK ORDER MODAL ====== */
+.track-ov{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:900;display:none;align-items:center;justify-content:center;padding:20px;}
+.track-ov.on{display:flex;}
+.track-box{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:32px 28px;position:relative;box-shadow:0 16px 48px rgba(0,0,0,.2);}
+.track-close{position:absolute;top:14px;right:14px;background:var(--bg2);border:none;border-radius:50%;width:34px;height:34px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.track-box h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--green-dark);margin-bottom:6px;}
+.track-box p.track-sub{font-size:13px;color:var(--text-l);margin-bottom:22px;}
+.track-field{margin-bottom:14px;}
+.track-field label{display:block;font-size:12px;font-weight:600;color:var(--text-m);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.track-field input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:.15s;background:var(--bg2);}
+.track-field input:focus{border-color:var(--green-mid);}
+.btn-track{width:100%;padding:13px;background:var(--green-btn);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-track:hover{background:var(--green-btn-h);}
+.track-result{display:none;margin-top:22px;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;}
+.track-result.on{display:block;}
+.tr-header{background:var(--green-dark);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.tr-header h4{font-size:14px;font-weight:700;}
+.tr-status-badge{background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;}
+.tr-body{padding:16px 18px;}
+.tr-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:var(--text-m);}
+.tr-row strong{color:var(--text);font-weight:600;}
+.tr-steps{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);}
+.tr-step{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;}
+.tr-dot{width:22px;height:22px;border-radius:50%;background:var(--green-mid);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.tr-dot i{font-size:9px;color:#fff;}
+.tr-dot.pending{background:var(--border);} 
+.tr-step-info{}
+.tr-step-title{font-size:13px;font-weight:600;color:var(--text);}
+.tr-step-date{font-size:11px;color:var(--text-l);margin-top:2px;}
 </style>
 </head>
 <body>
@@ -541,7 +577,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     <span class="hbg" onclick="openDrawer()"><i class="fa-solid fa-bars"></i></span>
 
     <!-- Center: Logo -->
-    <div class="hdr-logo">
+    <div class="hdr-logo" onclick="backHome()" style="cursor:pointer;" title="Go to Home">
       <div class="hdr-logo-text">Aastha <span>Divya</span></div>
       <div class="hdr-logo-sub">Divya Pharmacy Products</div>
     </div>
@@ -562,7 +598,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-cnt" id="cartCnt">0</span>
       </div>
-      <div class="hdr-icon" title="Track Order" style="font-size:17px"><i class="fa-solid fa-truck-fast"></i></div>
+      <div class="hdr-icon" title="Track Order" style="font-size:17px" onclick="openTrackOrder()"><i class="fa-solid fa-truck-fast"></i><span class="hdr-icon-lbl">Track</span></div>
     </div>
   </div>
   <!-- Mobile expandable search bar -->
@@ -1025,7 +1061,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     <a onclick="showCat('immunity');closeDrawer()">Immunity Boost <i class="chev fa-solid fa-chevron-right"></i></a>
     <a onclick="showCat('pooja');closeDrawer()">Pooja Essentials <i class="chev fa-solid fa-chevron-right"></i></a>
     <div class="drawer-sep"></div>
-    <a>Track Order</a>
+    <a onclick="openTrackOrder();closeDrawer()">Track Order</a>
     <a>Online Support</a>
     <a>Sitemap</a>
     <a>Contact Us</a>
@@ -1035,6 +1071,42 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     <a><i class="fa-brands fa-instagram"></i></a>
     <a><i class="fa-brands fa-youtube"></i></a>
     <a><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ====== TRACK ORDER MODAL ====== -->
+<div class="track-ov" id="trackOv" onclick="closeTrackOv(event)">
+  <div class="track-box" onclick="event.stopPropagation()">
+    <button class="track-close" onclick="closeTrackOrder()"><i class="fa-solid fa-xmark"></i></button>
+    <h3><i class="fa-solid fa-truck-fast" style="color:var(--green-mid);margin-right:8px;font-size:18px;"></i>Track Your Order</h3>
+    <p class="track-sub">Enter your Order ID and mobile number to track your delivery status.</p>
+    <div class="track-field">
+      <label>Order ID</label>
+      <input type="text" id="trackOrderId" placeholder="e.g. AD-2024-00123" />
+    </div>
+    <div class="track-field">
+      <label>Mobile Number</label>
+      <input type="tel" id="trackPhone" placeholder="Enter 10-digit mobile number" maxlength="10" />
+    </div>
+    <button class="btn-track" onclick="doTrackOrder()"><i class="fa-solid fa-magnifying-glass"></i> Track Order</button>
+    <div class="track-result" id="trackResult">
+      <div class="tr-header">
+        <h4 id="trOrderId">Order #AD-2024-00123</h4>
+        <span class="tr-status-badge" id="trBadge">In Transit</span>
+      </div>
+      <div class="tr-body">
+        <div class="tr-row"><span>Product</span><strong id="trProduct">Divya Madhunashni Vati</strong></div>
+        <div class="tr-row"><span>Estimated Delivery</span><strong id="trETA">2–3 Business Days</strong></div>
+        <div class="tr-row"><span>Courier</span><strong>Delhivery Express</strong></div>
+        <div class="tr-steps">
+          <div class="tr-step"><div class="tr-dot"><i class="fa-solid fa-check"></i></div><div class="tr-step-info"><div class="tr-step-title">Order Confirmed</div><div class="tr-step-date" id="trD1"></div></div></div>
+          <div class="tr-step"><div class="tr-dot"><i class="fa-solid fa-check"></i></div><div class="tr-step-info"><div class="tr-step-title">Packed & Dispatched</div><div class="tr-step-date" id="trD2"></div></div></div>
+          <div class="tr-step"><div class="tr-dot"><i class="fa-solid fa-check"></i></div><div class="tr-step-info"><div class="tr-step-title">In Transit</div><div class="tr-step-date" id="trD3"></div></div></div>
+          <div class="tr-step"><div class="tr-dot pending"><i class="fa-solid fa-clock"></i></div><div class="tr-step-info"><div class="tr-step-title">Out for Delivery</div><div class="tr-step-date">Estimated tomorrow</div></div></div>
+          <div class="tr-step"><div class="tr-dot pending"><i class="fa-solid fa-house"></i></div><div class="tr-step-info"><div class="tr-step-title">Delivered</div><div class="tr-step-date">Pending</div></div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1302,7 +1374,47 @@ function showView(v) {
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function backHome() { showView('home'); }
+function backHome() { 
+  showView('home'); 
+  window.history.replaceState({view:'home'},'','');
+}
+
+// Push state for views so browser back works
+function showViewWithHistory(v) {
+  showView(v);
+  if(v!=='home') window.history.pushState({view:v},'','');
+}
+window.addEventListener('popstate', function(e){
+  const v = (e.state && e.state.view) || 'home';
+  showView(v);
+});
+
+// Track Order Modal
+function openTrackOrder() {
+  document.getElementById('trackOv').classList.add('on');
+  document.getElementById('trackResult').classList.remove('on');
+  document.getElementById('trackOrderId').value='';
+  document.getElementById('trackPhone').value='';
+}
+function closeTrackOrder() { document.getElementById('trackOv').classList.remove('on'); }
+function closeTrackOv(e) { if(e.target===document.getElementById('trackOv')) closeTrackOrder(); }
+
+function doTrackOrder() {
+  const oid = document.getElementById('trackOrderId').value.trim();
+  const ph = document.getElementById('trackPhone').value.trim();
+  if(!oid || ph.length < 10) { showToast('Please enter a valid Order ID and 10-digit mobile number'); return; }
+  // Demo tracking result
+  const now = new Date();
+  const d = (offset) => { const dt=new Date(now); dt.setDate(dt.getDate()-offset); return dt.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}); };
+  document.getElementById('trOrderId').textContent = 'Order #' + oid.toUpperCase();
+  document.getElementById('trBadge').textContent = 'In Transit';
+  document.getElementById('trProduct').textContent = 'Divya Pharmacy Product';
+  document.getElementById('trETA').textContent = '1–2 Business Days';
+  document.getElementById('trD1').textContent = d(3);
+  document.getElementById('trD2').textContent = d(2);
+  document.getElementById('trD3').textContent = d(1);
+  document.getElementById('trackResult').classList.add('on');
+}
 
 function showAll() {
   document.getElementById('allViewTitle').textContent='ALL PRODUCTS';
