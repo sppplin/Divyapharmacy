@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aastha Divya – Divya Pharmacy Ayurvedic Products Online</title>
+<title>Divya Ayurveda – Authentic Ayurvedic & Pooja Products Online</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -56,7 +57,7 @@ img{max-width:100%;display:block;}
 @media(max-width:768px){
   .header-top{padding:10px 14px;gap:0;justify-content:space-between;}
   .hbg{display:flex;align-items:center;justify-content:center;margin-right:0;}
-  .hdr-logo{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none;}
+  .hdr-logo{position:absolute;left:50%;transform:translateX(-50%);pointer-events:auto;cursor:pointer;}
   .hdr-search{display:none;}
   .mob-search-icon{display:flex;align-items:center;}
   .hdr-icons .hdr-icon:not([onclick]):nth-child(1),
@@ -86,8 +87,9 @@ img{max-width:100%;display:block;}
 
 /* ====== CATEGORY CIRCLES ====== */
 .cat-circles{max-width:1320px;margin:0 auto;padding:22px 0 10px;}
-.circles-row{display:flex;gap:16px;overflow-x:auto;padding:0 20px 8px;scrollbar-width:none;}
+.circles-row{display:flex;gap:16px;overflow-x:auto;padding:0 20px 8px;scrollbar-width:none;justify-content:center;}
 .circles-row::-webkit-scrollbar{display:none;}
+@media(max-width:900px){.circles-row{justify-content:flex-start;}}
 .cat-item{flex-shrink:0;text-align:center;cursor:pointer;}
 .cat-img{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;margin:0 auto 7px;transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden;padding:0;}
 .cat-img img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
@@ -95,26 +97,88 @@ img{max-width:100%;display:block;}
 .cat-item p{font-size:11px;font-weight:500;color:var(--text-m);white-space:nowrap;}
 .cat-item.act p{color:var(--green-mid);font-weight:700;}
 
-/* ====== HERO SLIDER ====== */
-.hero-wrap{max-width:1320px;margin:0 auto;padding:0 20px 24px;}
-.hero-slider{position:relative;border-radius:16px;overflow:hidden;}
-.hero-slide{display:none;background:linear-gradient(135deg,#FFF3DC 0%,#FEE8B0 60%,#F5D880 100%);min-height:320px;padding:0 50px;align-items:center;justify-content:space-between;border-radius:16px;}
+/* ====== HERO SLIDER — FULL WIDTH ====== */
+.hero-wrap{width:100%;padding:0;margin:0;}
+.hero-slider{position:relative;overflow:hidden;width:100%;}
+.hero-slide{display:none;width:100%;min-height:420px;padding:0 8% 0 6%;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
 .hero-slide.on{display:flex;}
-.hs-content{flex:1;max-width:480px;}
+@media(max-width:768px){.hero-slide{min-height:200px;padding:22px 18px;}}
+.hs-content{flex:1;max-width:520px;z-index:2;position:relative;}
 .hs-tag{background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;display:inline-block;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;}
-.hs-content h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--green-dark);line-height:1.15;margin-bottom:10px;}
-.hs-disc{font-size:34px;font-weight:800;color:var(--orange);margin-bottom:18px;font-family:'Playfair Display',serif;}
+.hs-content h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--green-dark);line-height:1.15;margin-bottom:10px;}
+@media(max-width:768px){.hs-content h1{font-size:22px;}}
+.hs-disc{font-size:38px;font-weight:800;color:var(--orange);margin-bottom:18px;font-family:'Playfair Display',serif;}
+@media(max-width:768px){.hs-disc{font-size:24px;}}
 .hs-disc small{font-size:16px;font-weight:500;color:var(--text-l);text-decoration:line-through;margin-left:8px;font-family:'DM Sans',sans-serif;}
-.btn-hero{background:var(--green-btn);color:#fff;padding:11px 28px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:.2s;}
+.btn-hero{background:var(--green-btn);color:#fff;padding:12px 30px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-hero:hover{background:var(--green-btn-h);transform:translateY(-1px);}
-.hs-img{flex:0 0 40%;display:flex;align-items:center;justify-content:center;}
+.hs-img{flex:0 0 42%;display:flex;align-items:flex-end;justify-content:center;height:100%;min-height:420px;position:relative;}
+@media(max-width:768px){.hs-img{display:none;}}
+.hs-img img{height:100%;max-height:420px;width:auto;object-fit:contain;object-position:bottom;}
+.hs-bg-deco{position:absolute;inset:0;pointer-events:none;}
+.hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.85);border:none;border-radius:50%;width:44px;height:44px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:.2s;color:var(--green-dark);}
+.hero-prev{left:16px;}
+.hero-next{right:16px;}
+.hero-prev:hover,.hero-next:hover{background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.2);}
+.hero-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;}
+.h-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.22);cursor:pointer;border:none;transition:.2s;}
+.h-dot.on{background:var(--green-mid);width:22px;border-radius:4px;}
+
+/* ====== PROD IMG BOX ====== */
 .prod-img-box{width:220px;height:260px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-size:13px;font-weight:600;text-align:center;padding:16px;position:relative;overflow:hidden;}
 .prod-img-box .pib-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.3;}
 .prod-img-box .pib-brand{font-size:10px;opacity:.8;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;}
-.pib-leaf{position:absolute;right:-20px;top:-20px;width:100px;height:100px;opacity:.15;}
-.hero-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
-.h-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;border:none;transition:.2s;}
-.h-dot.on{background:var(--green-mid);width:18px;border-radius:4px;}
+
+/* ====== WISHLIST PANEL ====== */
+.wishlist-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;display:none;}
+.wishlist-ov.on{display:block;}
+.wishlist-bar{position:fixed;top:0;right:-400px;width:380px;height:100vh;background:#fff;z-index:401;transition:right .35s ease;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,.15);}
+.wishlist-bar.on{right:0;}
+.wl-hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.wl-hdr h3{font-size:16px;font-weight:700;color:var(--green-dark);}
+.wl-close{background:none;border:none;font-size:20px;color:var(--text-m);cursor:pointer;}
+.wl-items{flex:1;overflow-y:auto;padding:14px 16px;}
+.wl-empty{text-align:center;padding:60px 20px;}
+.wl-empty i{font-size:48px;color:var(--border);display:block;margin-bottom:12px;}
+.wl-empty p{font-size:14px;color:var(--text-l);}
+.wl-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);align-items:center;}
+.wl-item-img{width:64px;height:64px;border-radius:8px;background:var(--bg2);flex-shrink:0;overflow:hidden;}
+.wl-item-img .prod-img-box{width:100%;height:100%;border-radius:8px;font-size:9px;}
+.wl-item-info{flex:1;}
+.wl-item-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.4;}
+.wl-item-price{font-size:13px;font-weight:700;color:var(--green-dark);}
+.wl-item-actions{display:flex;gap:8px;margin-top:6px;}
+.wl-add-btn{padding:5px 12px;background:var(--green-btn);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;}
+.wl-del-btn{background:none;border:none;color:var(--text-l);cursor:pointer;font-size:14px;padding:2px;}
+
+/* ====== PRODUCT PAGE REVIEWS ====== */
+.pd-reviews-section{max-width:1320px;margin:0 auto;padding:20px 20px 40px;}
+.pd-rev-summary{display:flex;gap:32px;align-items:flex-start;margin-bottom:24px;padding:24px;background:var(--bg2);border-radius:12px;flex-wrap:wrap;}
+.pd-rev-big{text-align:center;}
+.pd-rev-big .score{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:var(--green-dark);line-height:1;}
+.pd-rev-big .stars-row{font-size:18px;color:var(--gold);}
+.pd-rev-big .total{font-size:12px;color:var(--text-l);margin-top:4px;}
+.pd-rev-bars{flex:1;min-width:180px;}
+.pd-rev-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.pd-rev-bar-lbl{font-size:11px;color:var(--text-m);min-width:30px;font-weight:600;}
+.pd-rev-bar-track{flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden;}
+.pd-rev-bar-fill{height:100%;background:var(--gold);border-radius:4px;}
+.pd-rev-bar-ct{font-size:11px;color:var(--text-l);min-width:24px;text-align:right;}
+.pd-rev-list{display:flex;flex-direction:column;gap:16px;}
+.pd-rev-item{padding:16px;background:#fff;border:1px solid var(--border);border-radius:10px;}
+.pd-rev-item-hdr{display:flex;justify-content:space-between;margin-bottom:6px;}
+.pd-rev-item-name{font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:5px;}
+.pd-rev-item-name i{color:var(--green-mid);font-size:11px;}
+.pd-rev-item-date{font-size:11px;color:var(--text-l);}
+.pd-rev-item-stars{color:var(--gold);font-size:12px;margin-bottom:5px;}
+.pd-rev-item-text{font-size:13px;color:var(--text-m);line-height:1.6;}
+
+/* ====== POOJA PRODUCTS SECTION ====== */
+.pooja-section{background:linear-gradient(135deg,#fdf6e3,#fef3c0);border-top:2px solid #e6d5a0;border-bottom:2px solid #e6d5a0;padding:36px 20px;}
+.pooja-section-inner{max-width:1320px;margin:0 auto;}
+.pooja-sec-hdr{text-align:center;margin-bottom:24px;}
+.pooja-sec-hdr h2{font-family:'Playfair Display',serif;font-size:28px;color:#5c2d0a;margin-bottom:6px;}
+.pooja-sec-hdr p{font-size:14px;color:#7d5a2a;}
 
 /* ====== SECTION ====== */
 .section{max-width:1320px;margin:0 auto;padding:30px 20px;}
@@ -178,7 +242,7 @@ img{max-width:100%;display:block;}
 .testi-wrap{position:relative;}
 .testi-track{overflow:hidden;}
 .testi-inner{display:flex;gap:20px;transition:transform .4s ease;}
-.testi-card{flex:0 0 calc(33.33% - 14px);background:#fff;border-radius:12px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.testi-card{flex:0 0 calc(33.33% - 14px);background:#fff;border-radius:12px;padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:left;}
 @media(max-width:900px){.testi-card{flex:0 0 calc(50% - 10px);}}
 @media(max-width:600px){.testi-card{flex:0 0 calc(100% - 0px);}}
 .testi-quote{font-size:32px;color:var(--green-mid);line-height:1;margin-bottom:10px;font-family:'Playfair Display',serif;}
@@ -273,12 +337,14 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 .payment-icons{display:flex;gap:8px;align-items:center;font-size:11px;}
 
 /* ====== MOBILE BOTTOM NAV ====== */
-.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);z-index:300;padding:6px 0 10px;}
-.mob-nav-row{display:flex;justify-content:space-around;}
-.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--text-l);font-size:10px;font-weight:500;padding:4px 10px;}
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);z-index:300;padding:5px 0 8px;box-shadow:0 -2px 12px rgba(0,0,0,.1);}
+.mob-nav-row{display:flex;justify-content:space-around;align-items:flex-end;}
+.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--text-l);font-size:9.5px;font-weight:500;padding:3px 4px;}
+.mob-nav-item span{font-size:9.5px;}
 .mob-nav-item.act{color:var(--green-mid);}
-.mob-nav-item i{font-size:19px;}
-.mob-sale-pill{background:var(--red);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:-4px;}
+.mob-nav-item i{font-size:17px;}
+.mob-sale-btn{display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;padding:2px 4px;}
+.mob-sale-img{width:32px;height:32px;margin-top:-6px;object-fit:contain;}
 
 /* ====== MOBILE DRAWER ====== */
 .drawer-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:599;display:none;}
@@ -487,14 +553,10 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 @media(max-width:768px){
   .main-nav{display:none;}
   .mob-nav{display:block;}
-  body{padding-bottom:66px;}
-  .whatsapp-float{bottom:80px;}
+  body{padding-bottom:72px;}
+  .whatsapp-float{bottom:84px;}
   .section{padding:22px 12px;}
   .sec-title{font-size:18px;}
-  .hero-slide{min-height:180px;padding:20px 16px;}
-  .hs-content h1{font-size:20px;}
-  .hs-disc{font-size:22px;}
-  .hs-img{display:none;}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .offer-plus{display:none;}
   .countdown{gap:8px;font-size:11px;}
@@ -512,8 +574,40 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 .whatsapp-float:hover{transform:scale(1.08);}
 .whatsapp-float i{font-size:24px;color:#fff;}
 
-/* utility */
-.hidden{display:none!important;}
+/* ====== REVIEWS POPUP ====== */
+.reviews-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:800;display:none;align-items:flex-end;justify-content:center;}
+.reviews-ov.on{display:flex;}
+@media(min-width:600px){.reviews-ov{align-items:center;}}
+.reviews-popup{background:#fff;width:100%;max-width:620px;border-radius:20px 20px 0 0;max-height:88vh;overflow-y:auto;display:flex;flex-direction:column;}
+@media(min-width:600px){.reviews-popup{border-radius:16px;max-height:82vh;}}
+.rp-hdr{padding:18px 22px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:2;}
+.rp-hdr h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--green-dark);}
+.rp-close{background:var(--bg2);border:none;border-radius:50%;width:34px;height:34px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-m);}
+.rp-summary{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;gap:24px;align-items:center;background:var(--bg2);}
+.rp-big-score{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--green-dark);line-height:1;}
+.rp-score-info{}
+.rp-score-info .stars-row{font-size:18px;color:var(--gold);}
+.rp-total{font-size:13px;color:var(--text-l);margin-top:3px;}
+.rp-bars{flex:1;}
+.rp-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.rp-bar-lbl{font-size:11px;color:var(--text-m);min-width:34px;font-weight:600;}
+.rp-bar-track{flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden;}
+.rp-bar-fill{height:100%;background:var(--gold);border-radius:4px;}
+.rp-bar-ct{font-size:11px;color:var(--text-l);min-width:28px;text-align:right;}
+.rp-list{padding:0 22px 22px;}
+.rp-review{padding:16px 0;border-bottom:1px solid var(--border);}
+.rp-review:last-child{border-bottom:none;}
+.rp-rev-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.rp-rev-name{font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:5px;}
+.rp-rev-name i{color:var(--green-mid);font-size:12px;}
+.rp-rev-date{font-size:11px;color:var(--text-l);}
+.rp-rev-stars{color:var(--gold);font-size:12px;margin-bottom:5px;}
+.rp-rev-prod{font-size:11px;color:var(--text-l);margin-bottom:5px;font-style:italic;}
+.rp-rev-text{font-size:13px;color:var(--text-m);line-height:1.6;}
+.rp-filter{padding:12px 22px;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;}
+.rp-filter-btn{padding:5px 14px;border-radius:16px;border:1.5px solid var(--border);background:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:.15s;color:var(--text-m);}
+.rp-filter-btn.act{background:var(--green-dark);color:#fff;border-color:var(--green-dark);}
+
 .view-all-wrap{text-align:center;margin-top:22px;}
 .btn-va{border:2px solid var(--green-mid);color:var(--green-mid);background:none;padding:10px 32px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;}
 .btn-va:hover{background:var(--green-mid);color:#fff;}
@@ -552,7 +646,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 <body>
 
 <!-- ====== REVIEWS TAB ====== -->
-<div class="reviews-tab"><i class="fa-solid fa-star"></i>REVIEWS</div>
+<div class="reviews-tab" onclick="openReviewsPopup()"><i class="fa-solid fa-star"></i>REVIEWS</div>
 
 <!-- ====== ANNOUNCE BAR ====== -->
 <div class="announce">
@@ -578,8 +672,8 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 
     <!-- Center: Logo -->
     <div class="hdr-logo" onclick="backHome()" style="cursor:pointer;" title="Go to Home">
-      <div class="hdr-logo-text">Aastha <span>Divya</span></div>
-      <div class="hdr-logo-sub">Divya Pharmacy Products</div>
+      <div class="hdr-logo-text">Divya <span>Ayurveda</span></div>
+      <div class="hdr-logo-sub">Authentic Ayurvedic Products</div>
     </div>
 
     <!-- Desktop: search bar -->
@@ -593,7 +687,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
       <!-- Mobile search icon -->
       <span class="mob-search-icon" onclick="document.getElementById('mobSearchBar').classList.toggle('on')"><i class="fa-solid fa-magnifying-glass"></i></span>
       <div class="hdr-icon" title="Account"><i class="fa-regular fa-user"></i></div>
-      <div class="hdr-icon" title="Wishlist"><i class="fa-regular fa-heart"></i></div>
+      <div class="hdr-icon" title="Wishlist" onclick="openWishlist()"><i class="fa-regular fa-heart"></i></div>
       <div class="hdr-icon" onclick="openCart()" title="Cart">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-cnt" id="cartCnt">0</span>
@@ -683,43 +777,77 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
         <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=150&h=150&fit=crop&crop=center" alt="Pooja Items" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
       </div><p>Pooja Items</p>
     </div>
+    <div class="cat-item" onclick="showSale()">
+      <div class="cat-img" style="border-color:var(--orange);background:linear-gradient(135deg,#fff8ee,#ffe0b0);padding:0;overflow:hidden;">
+        <img src="https://cdn.shopify.com/s/files/1/0763/9210/4246/files/new_offer_4cbfef76-cd99-4628-9562-123e3d12659b.svg" alt="New Offer" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div><p>New Offer</p>
+    </div>
   </div>
 </div>
 
-<!-- Hero Slider -->
+<!-- Hero Slider — Full Width -->
 <div class="hero-wrap">
-  <div class="hero-slider">
-    <div class="hero-slide on">
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide on" style="background:linear-gradient(120deg,#FFF3DC 0%,#FEE8B0 55%,#f5d97a 100%);">
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-fire"></i> Monsoon Wellness Sale</div>
-        <h1>The Ayurveda<br>Wellness Sale</h1>
+        <h1>The Ayurveda<br>Wellness Store</h1>
         <div class="hs-disc">UPTO 40% OFF</div>
         <button class="btn-hero" onclick="scrollSec('flashSection')"><i class="fa-solid fa-bag-shopping"></i> Shop Now</button>
       </div>
-      <div class="hs-img"><div style="width:220px;height:260px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.18)"><img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=440&h=520&fit=crop&crop=center" alt="Ayurvedic Wellness" style="width:100%;height:100%;object-fit:cover;"></div></div>
+      <div class="hs-img">
+        <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=600&h=500&fit=crop&crop=center" alt="Ayurvedic Wellness" onerror="this.style.display='none'">
+      </div>
     </div>
-    <div class="hero-slide">
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background:linear-gradient(120deg,#e8f5e9 0%,#c8e6c9 55%,#a5d6a7 100%);">
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-star"></i> Bestseller</div>
         <h1>Divya Madhunashni<br>For Diabetes Care</h1>
         <div class="hs-disc">Rs.299 <small>Rs.399</small></div>
         <button class="btn-hero" onclick="openProduct(0)"><i class="fa-solid fa-eye"></i> View Product</button>
       </div>
-      <div class="hs-img"><div style="width:220px;height:260px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.18)"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=440&h=520&fit=crop&crop=center" alt="Diabetes Care" style="width:100%;height:100%;object-fit:cover;"></div></div>
+      <div class="hs-img">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=500&fit=crop&crop=center" alt="Diabetes Care" onerror="this.style.display='none'">
+      </div>
     </div>
-    <div class="hero-slide">
+
+    <!-- Slide 3 — Build Your Own Box style -->
+    <div class="hero-slide" style="background:linear-gradient(120deg,#fce4ec 0%,#f8bbd9 40%,#fdd9b5 100%);">
+      <div class="hs-content">
+        <div class="hs-tag"><i class="fa-solid fa-box-open"></i> Special Combo</div>
+        <h1>Build Your<br>Own Box</h1>
+        <div class="hs-disc">at ₹999 <small>only</small></div>
+        <button class="btn-hero" onclick="showAll()"><i class="fa-solid fa-bag-shopping"></i> Shop Any 3</button>
+      </div>
+      <div class="hs-img">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=500&fit=crop&crop=center" alt="Combo Box" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide" style="background:linear-gradient(120deg,#f3e5f5 0%,#e1bee7 55%,#ce93d8 100%);">
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-hands-praying"></i> Pooja Essentials</div>
         <h1>Aastha Premium<br>Pooja Collection</h1>
         <div class="hs-disc">Starting Rs.49</div>
-        <button class="btn-hero" onclick="setCat(document.querySelector('[onclick*=pooja]'),'pooja')"><i class="fa-solid fa-bag-shopping"></i> Shop Pooja</button>
+        <button class="btn-hero" onclick="showCat('pooja')"><i class="fa-solid fa-bag-shopping"></i> Shop Pooja</button>
       </div>
-      <div class="hs-img"><div style="width:220px;height:260px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.18)"><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=440&h=520&fit=crop&crop=center" alt="Pooja Collection" style="width:100%;height:100%;object-fit:cover;"></div></div>
+      <div class="hs-img">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&h=500&fit=crop&crop=center" alt="Pooja Collection" onerror="this.style.display='none'">
+      </div>
     </div>
+
+    <button class="hero-prev" onclick="goSlide((slideIdx-1+4)%4)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="hero-next" onclick="goSlide((slideIdx+1)%4)"><i class="fa-solid fa-chevron-right"></i></button>
     <div class="hero-dots">
       <button class="h-dot on" onclick="goSlide(0)"></button>
       <button class="h-dot" onclick="goSlide(1)"></button>
       <button class="h-dot" onclick="goSlide(2)"></button>
+      <button class="h-dot" onclick="goSlide(3)"></button>
     </div>
   </div>
 </div>
@@ -728,6 +856,20 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 <div class="section" id="flashSection">
   <div class="sec-title"><i class="fa-solid fa-bolt"></i> FIERY FLASH DEALS <i class="fa-solid fa-bolt"></i></div>
   <div class="prod-grid" id="flashGrid"></div>
+</div>
+
+<!-- Pooja Products Section -->
+<div class="pooja-section">
+  <div class="pooja-section-inner">
+    <div class="pooja-sec-hdr">
+      <h2><i class="fa-solid fa-fire-flame-curved" style="color:#c0392b;margin-right:8px;"></i>Aastha Pooja Essentials</h2>
+      <p>Pure, authentic pooja products — crafted with traditional herbs and sacred ingredients</p>
+    </div>
+    <div class="prod-grid" id="poojaGrid"></div>
+    <div class="view-all-wrap" style="margin-top:20px;">
+      <button class="btn-va" onclick="showCat('pooja')" style="border-color:#5c2d0a;color:#5c2d0a;">VIEW ALL POOJA <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
 </div>
 
 <!-- Trust Strip -->
@@ -794,10 +936,10 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 </div>
 
 <!-- Testimonials -->
-<div class="section" style="background:var(--bg2);padding:30px 20px;margin:0;">
+<div style="background:var(--bg2);padding:36px 20px;margin:0;">
   <div style="max-width:1320px;margin:0 auto;">
-    <div class="sec-title">WHAT OUR CUSTOMERS SAY</div>
-    <div class="testi-wrap">
+    <div class="sec-title" style="text-align:center;margin-bottom:24px;">WHAT OUR CUSTOMERS SAY</div>
+    <div class="testi-wrap" style="max-width:1200px;margin:0 auto;">
       <div class="testi-track"><div class="testi-inner" id="testiInner">
         <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">Divya Madhunashni Vati has been a game changer for my father. His sugar levels have been much more stable over the last 3 months. Totally recommend it.</div><div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><div class="testi-name">Rajesh Kumar <i class="fa-solid fa-circle-check"></i></div><div class="testi-prod">Divya Madhunashni Vati Extra Power</div></div>
         <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">I've been using Medha Vati for 2 months now and my memory and concentration have clearly improved. This is genuine Ayurveda that actually works.</div><div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div><div class="testi-name">Priya Sharma <i class="fa-solid fa-circle-check"></i></div><div class="testi-prod">Divya Medha Vati Extra Power</div></div>
@@ -810,6 +952,9 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
         <button class="tn-btn" onclick="moveTesti(-1)"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="tn-dots" id="testiDots"></div>
         <button class="tn-btn" onclick="moveTesti(1)"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div style="text-align:center;margin-top:20px;">
+        <button class="btn-va" onclick="openReviewsPopup()" style="background:var(--green-btn);color:#fff;border-color:var(--green-btn);"><i class="fa-solid fa-star" style="margin-right:6px;"></i>View All Reviews & Ratings</button>
       </div>
     </div>
   </div>
@@ -893,7 +1038,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 <footer>
   <div class="footer-grid">
     <div class="fc fg-brand">
-      <h3>Aastha Divya</h3>
+      <h3>Divya Ayurveda</h3>
       <p>Your trusted source for authentic Ayurvedic medicines and pure Pooja essentials. We bring the wisdom of ancient India to your doorstep — naturally, safely, effectively.</p>
       <div class="social">
         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -921,7 +1066,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Aastha Divya. All rights reserved.</span>
+    <span>© 2025 Divya Ayurveda. All rights reserved.</span>
     <div class="payment-icons"><i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-google-pay"></i><i class="fa-solid fa-money-bill"></i> COD</div>
   </div>
 </footer>
@@ -981,7 +1126,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
       <div class="pd-sizes" id="pdSizes"></div>
 
       <button class="btn-pd-add" id="btnPdAdd"><i class="fa-solid fa-cart-plus"></i> ADD TO CART</button>
-      <button class="btn-pd-wish"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
+      <button class="btn-pd-wish" id="btnPdWish" onclick="toggleProductWishlist(this)"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
 
       <!-- Offer Strip -->
       <div class="offer-strip">
@@ -1025,15 +1170,42 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     <div class="sec-title">YOU MAY ALSO LIKE</div>
     <div class="prod-grid" id="relatedGrid"></div>
   </div>
+
+  <!-- Product Reviews -->
+  <div class="pd-reviews-section" id="pdReviewsSection">
+    <div class="sec-title">CUSTOMER REVIEWS</div>
+    <div class="pd-rev-summary">
+      <div class="pd-rev-big">
+        <div class="score" id="pdRevScore">4.5</div>
+        <div class="stars-row" id="pdRevStars"></div>
+        <div class="total" id="pdRevTotal"></div>
+      </div>
+      <div class="pd-rev-bars">
+        <div class="pd-rev-bar-row"><span class="pd-rev-bar-lbl">5 ★</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:70%"></div></div><span class="pd-rev-bar-ct">70%</span></div>
+        <div class="pd-rev-bar-row"><span class="pd-rev-bar-lbl">4 ★</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:18%"></div></div><span class="pd-rev-bar-ct">18%</span></div>
+        <div class="pd-rev-bar-row"><span class="pd-rev-bar-lbl">3 ★</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:7%;background:var(--orange)"></div></div><span class="pd-rev-bar-ct">7%</span></div>
+        <div class="pd-rev-bar-row"><span class="pd-rev-bar-lbl">2 ★</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:3%;background:#e0a060"></div></div><span class="pd-rev-bar-ct">3%</span></div>
+        <div class="pd-rev-bar-row"><span class="pd-rev-bar-lbl">1 ★</span><div class="pd-rev-bar-track"><div class="pd-rev-bar-fill" style="width:2%;background:var(--red)"></div></div><span class="pd-rev-bar-ct">2%</span></div>
+      </div>
+    </div>
+    <div class="pd-rev-list" id="pdRevList"></div>
+  </div>
 </div>
 
 <!-- ====== MOBILE BOTTOM NAV ====== -->
 <nav class="mob-nav">
   <div class="mob-nav-row">
-    <div class="mob-nav-item act" onclick="backHome()"><i class="fa-solid fa-house"></i>HOME</div>
-    <div class="mob-nav-item" onclick="showSale()"><div class="mob-sale-pill">SALE</div></div>
-    <div class="mob-nav-item" onclick="showAll()"><i class="fa-solid fa-star"></i>NEW</div>
-    <div class="mob-nav-item" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i>CART</div>
+    <div class="mob-nav-item act" onclick="backHome()"><i class="fa-solid fa-house"></i><span>HOME</span></div>
+    <div class="mob-sale-btn" onclick="showSale()">
+      <img src="https://cdn.shopify.com/s/files/1/0763/9210/4246/files/Sale_icon_70x70_New_Color_0506b3c7-6f48-4416-b70b-0816bb07e063.svg?v=1738667390" alt="Sale" class="mob-sale-img">
+      <span style="font-size:10px;font-weight:600;color:var(--red);">SALE</span>
+    </div>
+    <div class="mob-nav-item" onclick="showAll()" style="position:relative;">
+      <img src="https://cdn.shopify.com/s/files/1/0763/9210/4246/files/new_offer_4cbfef76-cd99-4628-9562-123e3d12659b.svg" alt="New" style="width:28px;height:28px;object-fit:contain;">
+      <span>NEW</span>
+    </div>
+    <div class="mob-nav-item" onclick="openWishlist()"><i class="fa-regular fa-heart"></i><span>WISHLIST</span></div>
+    <div class="mob-nav-item" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i><span>CART</span></div>
   </div>
 </nav>
 
@@ -1107,6 +1279,18 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ====== WISHLIST SIDEBAR ====== -->
+<div class="wishlist-ov" id="wishlistOv" onclick="closeWishlist()"></div>
+<div class="wishlist-bar" id="wishlistBar">
+  <div class="wl-hdr">
+    <h3><i class="fa-regular fa-heart" style="color:var(--red);margin-right:6px;"></i> MY WISHLIST (<span id="wlCount">0</span>)</h3>
+    <button class="wl-close" onclick="closeWishlist()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="wl-items" id="wlItems">
+    <div class="wl-empty"><i class="fa-regular fa-heart"></i><p>Your wishlist is empty</p></div>
   </div>
 </div>
 
@@ -1220,6 +1404,42 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
   </div>
 </div>
 
+<!-- ====== REVIEWS POPUP ====== -->
+<div class="reviews-ov" id="reviewsOv" onclick="closeReviewsPopup(event)">
+  <div class="reviews-popup" onclick="event.stopPropagation()">
+    <div class="rp-hdr">
+      <h3><i class="fa-solid fa-star" style="color:var(--gold);margin-right:7px;"></i>Customer Reviews & Ratings</h3>
+      <button class="rp-close" onclick="closeReviewsPopup()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="rp-summary">
+      <div>
+        <div class="rp-big-score">4.6</div>
+        <div class="rp-score-info">
+          <div class="stars-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+          <div class="rp-total">Based on 11,600+ Reviews</div>
+        </div>
+      </div>
+      <div class="rp-bars">
+        <div class="rp-bar-row"><span class="rp-bar-lbl">5 ★</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:72%"></div></div><span class="rp-bar-ct">72%</span></div>
+        <div class="rp-bar-row"><span class="rp-bar-lbl">4 ★</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:18%"></div></div><span class="rp-bar-ct">18%</span></div>
+        <div class="rp-bar-row"><span class="rp-bar-lbl">3 ★</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:6%;background:var(--orange)"></div></div><span class="rp-bar-ct">6%</span></div>
+        <div class="rp-bar-row"><span class="rp-bar-lbl">2 ★</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:2%;background:#e0a060"></div></div><span class="rp-bar-ct">2%</span></div>
+        <div class="rp-bar-row"><span class="rp-bar-lbl">1 ★</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:2%;background:var(--red)"></div></div><span class="rp-bar-ct">2%</span></div>
+      </div>
+    </div>
+    <div class="rp-filter">
+      <button class="rp-filter-btn act" onclick="filterReviews(this,'all')">All</button>
+      <button class="rp-filter-btn" onclick="filterReviews(this,'5')">5 Stars</button>
+      <button class="rp-filter-btn" onclick="filterReviews(this,'4')">4 Stars</button>
+      <button class="rp-filter-btn" onclick="filterReviews(this,'3')">3 Stars</button>
+      <button class="rp-filter-btn" onclick="filterReviews(this,'verified')">Verified Only</button>
+    </div>
+    <div class="rp-list" id="rpReviewsList">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
 <!-- WhatsApp Float -->
 <div class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></div>
 
@@ -1259,6 +1479,7 @@ const PRODUCTS = [
 // ========================
 let cart = [];
 let currentView = 'home'; // home | all | product
+let viewHistory = ['home'];
 let timerEnd = Date.now() + (2*86400+11*3600+45*60+30)*1000;
 let slideIdx = 0;
 let testiIdx = 0;
@@ -1330,8 +1551,9 @@ function badgeHtml(b) {
 function renderPCard(p) {
   const disc = p.mrp>p.price ? Math.round((1-p.price/p.mrp)*100):0;
   const brandLabel = p.cat === 'pooja' ? 'Aastha' : 'Divya Pharmacy';
+  const inWl = wishlist.some(i=>i.id===p.id);
   return `<div class="pcard" onclick="openProduct(${p.id})">
-    <div class="pc-img">${pibHtml(p)}${badgeHtml(p.badge)}<button class="pc-wish" onclick="event.stopPropagation();wishToggle(this)"><i class="fa-regular fa-heart"></i></button></div>
+    <div class="pc-img">${pibHtml(p)}${badgeHtml(p.badge)}<button class="pc-wish${inWl?' liked':''}" data-id="${p.id}" onclick="event.stopPropagation();wishToggle(this)">${inWl?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'}</button></div>
     <div class="pc-body">
       <div class="pc-concern">${brandLabel}</div>
       <div class="pc-name">${p.name}</div>
@@ -1351,6 +1573,8 @@ function init() {
   document.getElementById('flashGrid').innerHTML = PRODUCTS.filter(p=>p.mrp>p.price).slice(0,4).map(renderPCard).join('');
   // Bestsellers
   document.getElementById('bsGrid').innerHTML = PRODUCTS.filter(p=>p.badge==='bs').slice(0,4).map(renderPCard).join('');
+  // Pooja grid — show all 4 pooja products
+  document.getElementById('poojaGrid').innerHTML = PRODUCTS.filter(p=>p.cat==='pooja').map(renderPCard).join('');
   // Watch row
   document.getElementById('watchRow').innerHTML = PRODUCTS.slice(0,9).map(p=>`
     <div class="wcard" onclick="openProduct(${p.id})">
@@ -1372,22 +1596,90 @@ function showView(v) {
   document.getElementById('productView').classList.toggle('on', v==='product');
   currentView=v;
   window.scrollTo({top:0,behavior:'smooth'});
+  // Update mobile nav active state
+  document.querySelectorAll('.mob-nav-item').forEach(el=>el.classList.remove('act'));
+  if(v==='home') document.querySelector('.mob-nav-item')?.classList.add('act');
 }
 
-function backHome() { 
-  showView('home'); 
+function backHome() {
+  viewHistory = ['home'];
+  showView('home');
   window.history.replaceState({view:'home'},'','');
 }
 
 // Push state for views so browser back works
 function showViewWithHistory(v) {
+  viewHistory.push(v);
   showView(v);
-  if(v!=='home') window.history.pushState({view:v},'','');
+  window.history.pushState({view:v},'','');
 }
 window.addEventListener('popstate', function(e){
-  const v = (e.state && e.state.view) || 'home';
-  showView(v);
+  // Always go to previous section, never close site
+  if(viewHistory.length > 1) {
+    viewHistory.pop();
+    const prev = viewHistory[viewHistory.length-1];
+    showView(prev);
+  } else {
+    showView('home');
+    window.history.pushState({view:'home'},'','');
+  }
 });
+
+// ========================
+// REVIEWS POPUP
+// ========================
+const ALL_REVIEWS = [
+  {name:'Rajesh Kumar',date:'15 Mar 2025',rating:5,product:'Divya Madhunashni Vati Extra Power',text:'Divya Madhunashni Vati has been a game changer for my father. His sugar levels have been much more stable over the last 3 months. Totally recommend it.',verified:true},
+  {name:'Priya Sharma',date:'02 Apr 2025',rating:5,product:'Divya Medha Vati Extra Power',text:"I've been using Medha Vati for 2 months now and my memory and concentration have clearly improved. This is genuine Ayurveda that actually works.",verified:true},
+  {name:'Sunita Patel',date:'28 Feb 2025',rating:5,product:'Aastha Dhoop Batti',text:"Aastha Dhoop Batti's fragrance is absolutely divine. It fills the whole house with a sacred atmosphere. Best quality I've found online.",verified:true},
+  {name:'Anil Verma',date:'10 Jan 2025',rating:5,product:'Divya Mukta Vati Extra Power',text:'Mukta Vati has been incredibly helpful for managing my blood pressure. My doctor was impressed by the improvement. Natural and effective.',verified:true},
+  {name:'Meena Joshi',date:'19 Mar 2025',rating:4,product:'Aastha Havan Samgri',text:'The Aastha Havan Samgri is made from real herbs. You can feel the difference from cheap alternatives. Fast delivery and great packaging.',verified:true},
+  {name:'Ramesh Gupta',date:'05 Feb 2025',rating:5,product:'Divya Peedanil Gold Tablet',text:'Peedanil Gold has given me relief from knee pain that I had for years. I can now walk without difficulty. Truly miraculous Ayurvedic medicine.',verified:true},
+  {name:'Kavitha Nair',date:'22 Mar 2025',rating:4,product:'Divya Swasari Gold',text:'My asthma symptoms have reduced significantly since I started Swasari Gold. Breathing much better especially in the mornings.',verified:true},
+  {name:'Suresh Yadav',date:'11 Apr 2025',rating:5,product:'Triphala Churna',text:"Best Triphala I've ever had. Genuine product, proper packaging. My digestion issues are completely resolved after 6 weeks of use.",verified:true},
+  {name:'Deepa Mishra',date:'08 Mar 2025',rating:5,product:'Divya Ashwagandha Churna',text:'Ashwagandha Churna from Divya Pharmacy is absolutely the best. My energy levels and sleep quality have improved tremendously.',verified:true},
+  {name:'Harish Tiwari',date:'30 Jan 2025',rating:3,product:'Divya Madhugrit',text:'Average product for me personally, did not see much difference in 4 weeks. Maybe I need to use it longer. Packaging was good.',verified:false},
+  {name:'Anita Singh',date:'14 Apr 2025',rating:5,product:'Divya BPGrit',text:'BPGrit has helped me reduce my BP medicine dosage as per my doctor. Very happy with the results. Authentic product.',verified:true},
+  {name:'Mohan Lal',date:'27 Feb 2025',rating:4,product:'Divya Chandraprabha Vati',text:'Chandraprabha Vati helped with my kidney stone issue significantly. Doctor confirmed improvement in my scan. Great product.',verified:true},
+];
+
+let currentFilter = 'all';
+function openReviewsPopup() {
+  document.getElementById('reviewsOv').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  renderReviews(currentFilter);
+}
+function closeReviewsPopup(e) {
+  if(e && e.target !== document.getElementById('reviewsOv')) return;
+  document.getElementById('reviewsOv').classList.remove('on');
+  document.body.style.overflow = '';
+}
+function filterReviews(btn, f) {
+  document.querySelectorAll('.rp-filter-btn').forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act');
+  currentFilter = f;
+  renderReviews(f);
+}
+function renderReviews(f) {
+  let list = ALL_REVIEWS;
+  if(f==='5') list = ALL_REVIEWS.filter(r=>r.rating===5);
+  else if(f==='4') list = ALL_REVIEWS.filter(r=>r.rating===4);
+  else if(f==='3') list = ALL_REVIEWS.filter(r=>r.rating<=3);
+  else if(f==='verified') list = ALL_REVIEWS.filter(r=>r.verified);
+  const starsHtml = n => Array.from({length:5},(_,i)=>`<i class="fa-${i<Math.floor(n)?'solid':'regular'} fa-star"></i>`).join('');
+  document.getElementById('rpReviewsList').innerHTML = list.length
+    ? list.map(r=>`<div class="rp-review">
+        <div class="rp-rev-hdr">
+          <div class="rp-rev-name">${r.name}${r.verified?'<i class="fa-solid fa-circle-check"></i>':''}</div>
+          <div class="rp-rev-date">${r.date}</div>
+        </div>
+        <div class="rp-rev-stars">${starsHtml(r.rating)}</div>
+        <div class="rp-rev-prod">${r.product}</div>
+        <div class="rp-rev-text">${r.text}</div>
+      </div>`).join('')
+    : '<p style="text-align:center;padding:30px;color:var(--text-l)">No reviews found for this filter.</p>';
+}
+
 
 // Track Order Modal
 function openTrackOrder() {
@@ -1419,13 +1711,17 @@ function doTrackOrder() {
 function showAll() {
   document.getElementById('allViewTitle').textContent='ALL PRODUCTS';
   document.getElementById('allGrid').innerHTML = PRODUCTS.map(renderPCard).join('');
+  viewHistory.push('all');
   showView('all');
+  window.history.pushState({view:'all'},'','');
 }
 
 function showSale() {
   document.getElementById('allViewTitle').textContent='SALE PRODUCTS';
   document.getElementById('allGrid').innerHTML = PRODUCTS.filter(p=>p.mrp>p.price).map(renderPCard).join('');
+  viewHistory.push('all');
   showView('all');
+  window.history.pushState({view:'all'},'','');
 }
 
 function showCat(cat) {
@@ -1433,7 +1729,9 @@ function showCat(cat) {
   const list = cat==='immunity' ? PRODUCTS.filter(p=>p.cat==='immunity'||p.berp==='8857000041') : PRODUCTS.filter(p=>p.cat===cat);
   document.getElementById('allViewTitle').textContent = titles[cat]||'Products';
   document.getElementById('allGrid').innerHTML = list.map(renderPCard).join('');
+  viewHistory.push('all');
   showView('all');
+  window.history.pushState({view:'all'},'','');
 }
 
 function setCat(el, cat) {
@@ -1455,8 +1753,20 @@ function scrollSec(id) { document.getElementById(id)?.scrollIntoView({behavior:'
 // ========================
 // PRODUCT PAGE
 // ========================
+let currentProductId = null;
+const PRODUCT_REVIEWS = {
+  0:[{name:'Rajesh Kumar',date:'15 Mar 2025',r:5,text:'Madhunashni Vati has been a game changer for my father. His sugar levels have been much more stable over the last 3 months.',verified:true},{name:'Sunita Mehta',date:'02 Feb 2025',r:5,text:'Genuine product, fast delivery. Been using for 6 weeks and sugar levels are clearly under control.',verified:true},{name:'Harish Yadav',date:'10 Jan 2025',r:4,text:'Good product. Takes about 3 weeks to show results but worth it.',verified:false}],
+  4:[{name:'Priya Sharma',date:'22 Mar 2025',r:5,text:"Memory and concentration have clearly improved after 2 months. This is genuine Ayurveda that actually works.",verified:true},{name:'Ravi Kumar',date:'08 Feb 2025',r:5,text:'Medha Vati has helped me focus at work. Stress and anxiety reduced significantly.',verified:true},{name:'Anita Joshi',date:'14 Jan 2025',r:4,text:'Good for students. My son uses it during exams and finds it helpful.',verified:true}],
+  5:[{name:'Anil Verma',date:'10 Jan 2025',r:5,text:'Mukta Vati has been incredibly helpful. My doctor was impressed by the improvement.',verified:true},{name:'Deepa Singh',date:'28 Mar 2025',r:5,text:'BP is under control now. Been using for 4 months alongside my medication.',verified:true},{name:'Mohan Lal',date:'05 Feb 2025',r:4,text:'Good product for BP management. Works best when combined with diet changes.',verified:false}],
+  16:[{name:'Sunita Patel',date:'28 Feb 2025',r:5,text:"Aastha Dhoop Batti's fragrance is absolutely divine. Best quality I've found online.",verified:true},{name:'Kavita Sharma',date:'15 Mar 2025',r:5,text:'Pure and long-lasting fragrance. Fills the entire house with sacred aroma.',verified:true}],
+  17:[{name:'Ritu Gupta',date:'20 Mar 2025',r:5,text:'Genuine Agar fragrance, not artificial. Perfect for daily puja.',verified:true},{name:'Arun Mishra',date:'12 Feb 2025',r:4,text:'Good quality agar batti. Burns evenly and the smell is authentic.',verified:true}],
+  18:[{name:'Meena Joshi',date:'19 Mar 2025',r:5,text:'Pure cow ghee, you can tell by the aroma. Perfect for havan and cooking.',verified:true},{name:'Vikram Singh',date:'08 Jan 2025',r:5,text:'Best ghee for puja rituals. Completely authentic and pure.',verified:true}],
+  19:[{name:'Ramesh Gupta',date:'05 Feb 2025',r:5,text:'Made from real herbs. You can feel the difference from cheap alternatives. Fast delivery.',verified:true},{name:'Lalita Devi',date:'22 Mar 2025',r:5,text:'Beautiful fragrance during havan. Contains many different herbs.',verified:true}],
+};
+
 function openProduct(id) {
   const p = PRODUCTS[id];
+  currentProductId = id;
   document.getElementById('pdBreadcrumb').textContent = p.short;
   // Main image
   const imgSrc = PROD_IMAGES[p.id] || CAT_IMAGES[p.cat] || '';
@@ -1469,7 +1779,7 @@ function openProduct(id) {
       <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;">${brandLabel}</div>
       <div style="color:#fff;font-family:'Playfair Display',serif;font-size:16px;line-height:1.3;font-weight:700;">${p.name}</div>
     </div>`;
-  // Thumbnails (5 angles, same image)
+  // Thumbnails
   const variants=['Front','Back','Ingredients','Usage','Results'];
   document.getElementById('pdThumbs').innerHTML = variants.map((v,i)=>`
     <div class="pd-thumb${i===0?' sel':''}" onclick="selThumb(this)">
@@ -1497,12 +1807,33 @@ function openProduct(id) {
   document.getElementById('pdDesc').textContent=p.desc;
   document.getElementById('pdWhoUse').textContent=p.whoUse;
   document.getElementById('pdBenefits').innerHTML=p.benefits.map(b=>`<li>${b}</li>`).join('');
+  // Wishlist state
+  const wBtn = document.getElementById('btnPdWish');
+  const inWl = wishlist.some(i=>i.id===id);
+  wBtn.innerHTML = inWl ? '<i class="fa-solid fa-heart"></i> Wishlisted' : '<i class="fa-regular fa-heart"></i> Add to Wishlist';
+  wBtn.style.color = inWl ? 'var(--red)' : '';
   // Related
   const rel=PRODUCTS.filter(r=>r.cat===p.cat&&r.id!==p.id).slice(0,4);
   document.getElementById('relatedGrid').innerHTML=rel.map(renderPCard).join('');
-  // Add to cart button
+  // Reviews
+  const revs = PRODUCT_REVIEWS[id] || PRODUCT_REVIEWS[0];
+  document.getElementById('pdRevScore').textContent = p.rating.toFixed(1);
+  document.getElementById('pdRevStars').innerHTML = starHtml(p.rating);
+  document.getElementById('pdRevTotal').textContent = `${p.reviews} verified reviews`;
+  document.getElementById('pdRevList').innerHTML = revs.map(r=>`
+    <div class="pd-rev-item">
+      <div class="pd-rev-item-hdr">
+        <div class="pd-rev-item-name">${r.name}${r.verified?'<i class="fa-solid fa-circle-check"></i>':''}</div>
+        <div class="pd-rev-item-date">${r.date}</div>
+      </div>
+      <div class="pd-rev-item-stars">${starHtml(r.r)}</div>
+      <div class="pd-rev-item-text">${r.text}</div>
+    </div>`).join('');
+  // Add to cart
   document.getElementById('btnPdAdd').onclick=()=>{addToCart(p.id);};
+  viewHistory.push('product');
   showView('product');
+  window.history.pushState({view:'product'},'','');
 }
 
 function selThumb(el) { document.querySelectorAll('.pd-thumb').forEach(e=>e.classList.remove('sel')); el.classList.add('sel'); }
@@ -1587,17 +1918,83 @@ function closeDrawer(){document.getElementById('drawer').classList.remove('on');
 // ========================
 // WISHLIST
 // ========================
-function wishToggle(btn){btn.classList.toggle('liked');btn.innerHTML=btn.classList.contains('liked')?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>';}
+let wishlist = [];
+function wishToggle(btn) {
+  const id = parseInt(btn.dataset.id);
+  const p = PRODUCTS[id];
+  const idx = wishlist.findIndex(i=>i.id===id);
+  if(idx>-1){
+    wishlist.splice(idx,1);
+    btn.classList.remove('liked');
+    btn.innerHTML='<i class="fa-regular fa-heart"></i>';
+    showToast('Removed from wishlist');
+  } else {
+    wishlist.push({id});
+    btn.classList.add('liked');
+    btn.innerHTML='<i class="fa-solid fa-heart"></i>';
+    showToast(`❤️ Added to wishlist: ${p.short}`);
+  }
+  updateWishlist();
+}
+function toggleProductWishlist(btn) {
+  const id = currentProductId;
+  if(id==null) return;
+  const p = PRODUCTS[id];
+  const idx = wishlist.findIndex(i=>i.id===id);
+  if(idx>-1){
+    wishlist.splice(idx,1);
+    btn.innerHTML='<i class="fa-regular fa-heart"></i> Add to Wishlist';
+    btn.style.color='';
+    showToast('Removed from wishlist');
+  } else {
+    wishlist.push({id});
+    btn.innerHTML='<i class="fa-solid fa-heart"></i> Wishlisted';
+    btn.style.color='var(--red)';
+    showToast(`❤️ Added: ${p.short}`);
+  }
+  updateWishlist();
+}
+function updateWishlist() {
+  const wlItems = document.getElementById('wlItems');
+  document.getElementById('wlCount').textContent = wishlist.length;
+  if(!wishlist.length){
+    wlItems.innerHTML='<div class="wl-empty"><i class="fa-regular fa-heart"></i><p>Your wishlist is empty</p></div>';
+    return;
+  }
+  wlItems.innerHTML = wishlist.map(it=>{
+    const p = PRODUCTS[it.id];
+    return `<div class="wl-item">
+      <div class="wl-item-img">${pibHtml(p,'64px')}</div>
+      <div class="wl-item-info">
+        <div class="wl-item-name">${p.name}</div>
+        <div class="wl-item-price">₹${p.price} <span style="font-size:11px;color:var(--text-l);text-decoration:line-through;margin-left:4px;">₹${p.mrp}</span></div>
+        <div class="wl-item-actions">
+          <button class="wl-add-btn" onclick="addToCart(${p.id});closeWishlist()">Add to Cart</button>
+          <button class="wl-del-btn" onclick="removeFromWishlist(${p.id})"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function removeFromWishlist(id) {
+  wishlist = wishlist.filter(i=>i.id!==id);
+  updateWishlist();
+  showToast('Removed from wishlist');
+}
+function openWishlist(){document.getElementById('wishlistBar').classList.add('on');document.getElementById('wishlistOv').classList.add('on');}
+function closeWishlist(){document.getElementById('wishlistBar').classList.remove('on');document.getElementById('wishlistOv').classList.remove('on');}
 
 // ========================
 // HERO SLIDER
 // ========================
+const TOTAL_SLIDES = 4;
 function goSlide(n){
+  n = ((n % TOTAL_SLIDES) + TOTAL_SLIDES) % TOTAL_SLIDES;
   document.querySelectorAll('.hero-slide').forEach((s,i)=>s.classList.toggle('on',i===n));
   document.querySelectorAll('.h-dot').forEach((d,i)=>d.classList.toggle('on',i===n));
   slideIdx=n;
 }
-function startSlider(){setInterval(()=>goSlide((slideIdx+1)%3),4800);}
+function startSlider(){setInterval(()=>goSlide((slideIdx+1)%TOTAL_SLIDES),4800);}
 
 // ========================
 // TESTIMONIALS
