@@ -93,14 +93,15 @@ img{max-width:100%;display:block;}
 .cat-item{flex-shrink:0;text-align:center;cursor:pointer;}
 .cat-img{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;margin:0 auto 7px;transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden;padding:0;}
 .cat-img img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.cat-img img.cat-icon{width:52%;height:52%;object-fit:contain;border-radius:0;}
 .cat-item:hover .cat-img,.cat-item.act .cat-img{border-color:var(--green-mid);transform:scale(1.07);box-shadow:0 4px 14px rgba(74,110,26,.3);}
 .cat-item p{font-size:11px;font-weight:500;color:var(--text-m);white-space:nowrap;}
 .cat-item.act p{color:var(--green-mid);font-weight:700;}
 
-/* ====== HERO SLIDER — FULL WIDTH ====== */
-.hero-wrap{width:100%;padding:0;margin:0;}
-.hero-slider{position:relative;overflow:hidden;width:100%;}
-.hero-slide{display:none;width:100%;min-height:420px;padding:0 8% 0 6%;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
+/* ====== HERO SLIDER — CONTAINED WIDTH ====== */
+.hero-wrap{width:100%;padding:0 20px;margin:0;box-sizing:border-box;}
+.hero-slider{position:relative;overflow:hidden;width:100%;max-width:1320px;margin:0 auto;border-radius:16px;}
+.hero-slide{display:none;width:100%;min-height:380px;padding:0 5%;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
 .hero-slide.on{display:flex;}
 @media(max-width:768px){.hero-slide{min-height:200px;padding:22px 18px;}}
 .hs-content{flex:1;max-width:520px;z-index:2;position:relative;}
@@ -738,43 +739,43 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 <div class="cat-circles">
   <div class="circles-row">
     <div class="cat-item act" onclick="setCat(this,'all')">
-      <div class="cat-img" style="border-color:var(--green-mid)">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop&crop=center" alt="All Products" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="border-color:var(--green-mid);background:linear-gradient(135deg,#e8f5e9,#f0fbe8);">
+        <img src="https://cdn-icons-png.flaticon.com/128/3081/3081986.png" alt="All Products" class="cat-icon">
       </div><p>All Products</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'diabetes')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=150&h=150&fit=crop&crop=center" alt="Diabetes Care" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#e8f5ff;">
+        <img src="https://cdn-icons-png.flaticon.com/128/12310/12310271.png" alt="Diabetes Care" class="cat-icon">
       </div><p>Diabetes Care</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'respiratory')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&h=150&fit=crop&crop=center" alt="Respiratory" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#e8f0ff;">
+        <img src="https://cdn-icons-png.flaticon.com/128/4702/4702215.png" alt="Respiratory" class="cat-icon">
       </div><p>Respiratory</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'brain')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=150&h=150&fit=crop&crop=center" alt="Brain & Memory" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#f0e8ff;">
+        <img src="https://cdn-icons-png.flaticon.com/128/6969/6969711.png" alt="Brain & Memory" class="cat-icon">
       </div><p>Brain &amp; Memory</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'heart')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=150&h=150&fit=crop&crop=center" alt="Heart & BP" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#ffe8e8;">
+        <img src="https://cdn-icons-png.flaticon.com/128/508/508786.png" alt="Heart & BP" class="cat-icon">
       </div><p>Heart &amp; BP</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'joint')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=150&h=150&fit=crop&crop=center" alt="Joint Care" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#e8fff0;">
+        <img src="https://cdn-icons-png.flaticon.com/128/7350/7350861.png" alt="Joint Care" class="cat-icon">
       </div><p>Joint Care</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'digestive')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=150&h=150&fit=crop&crop=center" alt="Digestive" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#fff8e8;">
+        <img src="https://cdn-icons-png.flaticon.com/128/10154/10154238.png" alt="Digestive" class="cat-icon">
       </div><p>Digestive</p>
     </div>
     <div class="cat-item" onclick="setCat(this,'pooja')">
-      <div class="cat-img">
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=150&h=150&fit=crop&crop=center" alt="Pooja Items" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <div class="cat-img" style="background:#fff3e0;">
+        <img src="https://cdn-icons-png.flaticon.com/128/5922/5922805.png" alt="Pooja Items" class="cat-icon">
       </div><p>Pooja Items</p>
     </div>
     <div class="cat-item" onclick="showSale()">
@@ -1515,8 +1516,8 @@ const PROD_IMAGES = {
   13: 'https://www.patanjaliayurved.net/assets/product_images/400x500/1764047283chandra1201.webp',     // Chandraprabha 120
   14: 'https://www.patanjaliayurved.net/assets/product_images/400x500/1764047283chandra1201.webp',     // Chandraprabha 40 — same product
   15: 'https://www.patanjaliayurved.net/assets/product_images/400x500/1764047283chandra1201.webp',     // Chandraprabha 80 — same product
-  16: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop',             // Dhoop Batti
-  17: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop',             // Agar Batti — same style
+  16: 'https://5.imimg.com/data5/SELLER/Default/2021/1/RG/VV/RF/65524077/140-gm-sandal-aastha-wet-dhoop.jpg',   // Dhoop Batti
+  17: 'https://ayurvedalifeclinic.com/wp-content/uploads/2023/09/1688624625AgarbattiSandal150g1.png',              // Agar Batti
   18: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=300&h=300&fit=crop',            // Cow Ghee
   19: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=300&h=300&fit=crop',               // Havan Samgri
 };
