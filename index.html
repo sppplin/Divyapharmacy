@@ -70,7 +70,7 @@ img{max-width:100%;display:block;}
 /* desktop nav */
 .main-nav{background:#fff;border-top:1px solid var(--border);}
 .nav-list{max-width:1320px;margin:0 auto;padding:0 20px;display:flex;align-items:center;}
-.nav-list a{font-size:12.5px;font-weight:500;color:var(--text);padding:11px 13px;position:relative;white-space:nowrap;cursor:pointer;transition:color .15s;}
+.nav-list a{font-size:11.5px;font-weight:500;color:var(--text);padding:11px 10px;position:relative;white-space:nowrap;cursor:pointer;transition:color .15s;}
 .nav-list a.sale-lnk{color:var(--red);font-weight:700;}
 .nav-list a:hover,.nav-list a.act{color:var(--green-mid);}
 .nav-list a.act::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:2.5px;background:var(--green-mid);border-radius:2px;}
@@ -498,6 +498,44 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
   .tb-circle i{font-size:18px;}
 }
 
+/* ====== FOUNDER SECTION ====== */
+.founder-section{background:linear-gradient(135deg,#1a3a0a 0%,#2e4a0e 50%,#1a3a0a 100%);padding:64px 20px;position:relative;overflow:hidden;}
+.founder-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.founder-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+@media(max-width:800px){.founder-inner{grid-template-columns:1fr;gap:36px;text-align:center;}}
+.founder-images{position:relative;height:440px;}
+@media(max-width:800px){.founder-images{height:320px;max-width:380px;margin:0 auto;}}
+.founder-img-main{position:absolute;bottom:0;left:0;width:70%;height:90%;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.15);}
+.founder-img-main img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.founder-img-secondary{position:absolute;top:0;right:0;width:48%;height:58%;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.45);border:3px solid rgba(255,255,255,0.15);}
+.founder-img-secondary img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.founder-tag{position:absolute;bottom:24px;right:0;background:var(--orange);color:#fff;padding:10px 18px;border-radius:12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;box-shadow:0 6px 20px rgba(224,123,31,0.5);z-index:3;}
+.founder-tag span{display:block;font-size:20px;font-weight:800;letter-spacing:0;}
+.founder-content{}
+.founder-eyebrow{color:var(--gold);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.founder-eyebrow::before{content:'';display:inline-block;width:32px;height:2px;background:var(--gold);}
+@media(max-width:800px){.founder-eyebrow{justify-content:center;}}
+.founder-content h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:18px;}
+@media(max-width:600px){.founder-content h2{font-size:26px;}}
+.founder-content h2 span{color:var(--gold);}
+.founder-quote{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:20px;font-style:italic;padding-left:16px;border-left:3px solid var(--gold);}
+@media(max-width:800px){.founder-quote{text-align:left;}}
+.founder-bio{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:28px;}
+.founder-stats{display:flex;gap:28px;margin-bottom:28px;flex-wrap:wrap;}
+@media(max-width:800px){.founder-stats{justify-content:center;}}
+.fstat{text-align:center;}
+.fstat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1;}
+.fstat-lbl{font-size:11px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}
+.founder-sig{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+@media(max-width:800px){.founder-sig{justify-content:center;}}
+.founder-sig-name{color:#fff;}
+.founder-sig-name strong{display:block;font-size:15px;font-weight:700;}
+.founder-sig-name span{font-size:12px;color:rgba(255,255,255,0.5);}
+.founder-sig-divider{width:1px;height:36px;background:rgba(255,255,255,0.2);}
+.founder-awards{display:flex;gap:10px;flex-wrap:wrap;}
+.faward{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:5px;}
+.faward i{color:var(--gold);font-size:10px;}
+
 /* ====== CHECKOUT MODAL ====== */
 .ck-ov{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:800;display:none;align-items:center;justify-content:center;padding:20px;}
 .ck-ov.on{display:flex;}
@@ -713,6 +751,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
       <a onclick="showCat('heart')">HEART &amp; BP <i class="fa-solid fa-chevron-down"></i></a>
       <a onclick="showCat('joint')">JOINT CARE <i class="fa-solid fa-chevron-down"></i></a>
       <a onclick="showCat('digestive')">DIGESTIVE <i class="fa-solid fa-chevron-down"></i></a>
+      <a onclick="showCat('pooja')">POOJA ESSENTIALS <i class="fa-solid fa-chevron-down"></i></a>
       <a onclick="showAll()">NEW ARRIVAL</a>
     </div>
   </nav>
@@ -1019,7 +1058,59 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
       <p>Bring divine fragrance and purity to your home with our premium Dhoop Batti, Agar Batti, Pure Cow Ghee and Havan Samgri — crafted with authentic herbs.</p>
       <button class="btn-hero" onclick="showCat('pooja')"><i class="fa-solid fa-fire-flame-curved"></i> Shop Pooja Essentials</button>
     </div>
-    <div class="pj-icons" style="flex:0 0 260px;height:200px;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.35)"><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=520&h=400&fit=crop&crop=center" alt="Pooja Essentials" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="pj-icons" style="flex:0 0 260px;height:200px;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.35)"><img src="https://i.ibb.co/WN07gjRv/Aastha-Pooja-Collection-display.png" alt="Aastha Pooja Collection" style="width:100%;height:100%;object-fit:cover;"></div>
+  </div>
+</div>
+
+<!-- Founder Section -->
+<div class="founder-section">
+  <div class="founder-inner">
+
+    <!-- Images -->
+    <div class="founder-images">
+      <div class="founder-img-main">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=700&fit=crop&crop=top" alt="Founder Name - Founder">
+      </div>
+      <div class="founder-img-secondary">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=360&fit=crop&crop=center" alt="Ayurvedic Herbs Laboratory">
+      </div>
+      <div class="founder-tag">30+ <span>Years</span> of Excellence</div>
+    </div>
+
+    <!-- Content -->
+    <div class="founder-content">
+      <div class="founder-eyebrow">Our Founder's Story</div>
+      <h2>Rooted in Tradition,<br>Driven by <span>Purpose</span></h2>
+
+      <p class="founder-quote">"Ayurveda is not just medicine — it is a way of living in harmony with nature. Every product we make carries that philosophy."</p>
+
+      <p class="founder-bio">
+        Founder Name founded Divya Ayurveda in 1994 with a single mission: to bring the authentic healing wisdom of ancient India to every household — without compromise. After 12 years of research at leading Ayurvedic institutes and studying under renowned Vaidyas in Rishikesh, he established a small formulation unit that has since grown into one of India's most trusted Ayurvedic brands.
+        <br><br>
+        Today, Divya Ayurveda partners with Patanjali's finest herbalists, maintains GMP-certified manufacturing, and serves over 2 million families across India. The Aastha pooja range was born from his deep reverence for Vedic traditions — each product crafted to honour the sacred.
+      </p>
+
+      <div class="founder-stats">
+        <div class="fstat"><div class="fstat-num">2M+</div><div class="fstat-lbl">Families Served</div></div>
+        <div class="fstat"><div class="fstat-num">120+</div><div class="fstat-lbl">Formulations</div></div>
+        <div class="fstat"><div class="fstat-num">30+</div><div class="fstat-lbl">Years Legacy</div></div>
+        <div class="fstat"><div class="fstat-num">18</div><div class="fstat-lbl">States Delivered</div></div>
+      </div>
+
+      <div class="founder-sig">
+        <div class="founder-sig-name">
+          <strong>Founder Name</strong>
+          <span>Founder & Chief Formulator, Divya Ayurveda</span>
+        </div>
+        <div class="founder-sig-divider"></div>
+        <div class="founder-awards">
+          <span class="faward"><i class="fa-solid fa-award"></i> GMP Certified</span>
+          <span class="faward"><i class="fa-solid fa-leaf"></i> ISO 9001:2015</span>
+          <span class="faward"><i class="fa-solid fa-shield-halved"></i> FSSAI Licensed</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
