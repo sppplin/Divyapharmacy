@@ -89,9 +89,10 @@ img{max-width:100%;display:block;}
 .cat-circles{max-width:1320px;margin:0 auto;padding:22px 0 10px;}
 .circles-row{display:flex;gap:16px;overflow-x:auto;padding:0 20px 8px;scrollbar-width:none;justify-content:center;}
 .circles-row::-webkit-scrollbar{display:none;}
-@media(max-width:900px){.circles-row{justify-content:flex-start;}}
+@media(max-width:900px){.circles-row{justify-content:flex-start;gap:12px;}}
 .cat-item{flex-shrink:0;text-align:center;cursor:pointer;}
 .cat-img{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;margin:0 auto 7px;transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden;padding:0;}
+@media(max-width:600px){.cat-img{width:54px;height:54px;} .cat-item p{font-size:10px;} .circles-row{gap:10px;}}
 .cat-img img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .cat-img img.cat-icon{width:52%;height:52%;object-fit:contain;border-radius:0;}
 .cat-item:hover .cat-img,.cat-item.act .cat-img{border-color:var(--green-mid);transform:scale(1.07);box-shadow:0 4px 14px rgba(74,110,26,.3);}
@@ -99,28 +100,34 @@ img{max-width:100%;display:block;}
 .cat-item.act p{color:var(--green-mid);font-weight:700;}
 
 /* ====== HERO SLIDER — CONTAINED WIDTH ====== */
-.hero-wrap{width:100%;padding:0 20px;margin:0;box-sizing:border-box;}
-.hero-slider{position:relative;overflow:hidden;width:100%;max-width:1320px;margin:0 auto;border-radius:16px;}
-.hero-slide{display:none;width:100%;min-height:380px;padding:0 5%;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
+.hero-wrap{width:100%;padding:0 20px;margin:0 auto;box-sizing:border-box;max-width:1360px;display:flex;align-items:center;gap:10px;}
+.hero-slider{position:relative;overflow:hidden;flex:1;border-radius:16px;}
+.hero-slide{display:none;width:100%;min-height:420px;position:relative;overflow:hidden;}
 .hero-slide.on{display:flex;}
-@media(max-width:768px){.hero-slide{min-height:200px;padding:22px 18px;}}
-.hs-content{flex:1;max-width:520px;z-index:2;position:relative;}
+.hero-slide-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-slide-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.52) 0%,rgba(0,0,0,0.18) 55%,transparent 100%);}
+@media(max-width:768px){
+  .hero-wrap{padding:0 12px;gap:0;}
+  .hero-slider{border-radius:14px;}
+  .hero-prev,.hero-next{display:none;}
+  .hero-slide{min-height:220px;}
+  .hero-slide-overlay{background:linear-gradient(180deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.55) 100%);}
+}
+.hs-content{position:relative;z-index:3;padding:48px 5%;max-width:560px;align-self:center;}
+@media(max-width:768px){.hs-content{padding:24px 18px 36px;max-width:100%;}}
 .hs-tag{background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;display:inline-block;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;}
-.hs-content h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--green-dark);line-height:1.15;margin-bottom:10px;}
+.hs-content h1{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:10px;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
 @media(max-width:768px){.hs-content h1{font-size:22px;}}
-.hs-disc{font-size:38px;font-weight:800;color:var(--orange);margin-bottom:18px;font-family:'Playfair Display',serif;}
-@media(max-width:768px){.hs-disc{font-size:24px;}}
-.hs-disc small{font-size:16px;font-weight:500;color:var(--text-l);text-decoration:line-through;margin-left:8px;font-family:'DM Sans',sans-serif;}
+.hs-disc{font-size:36px;font-weight:800;color:#FFE066;margin-bottom:18px;font-family:'Playfair Display',serif;text-shadow:0 2px 10px rgba(0,0,0,0.25);}
+@media(max-width:768px){.hs-disc{font-size:22px;}}
+.hs-disc small{font-size:15px;font-weight:500;color:rgba(255,255,255,0.65);text-decoration:line-through;margin-left:8px;font-family:'DM Sans',sans-serif;}
 .btn-hero{background:var(--green-btn);color:#fff;padding:12px 30px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-hero:hover{background:var(--green-btn-h);transform:translateY(-1px);}
-.hs-img{flex:0 0 42%;display:flex;align-items:flex-end;justify-content:center;height:100%;min-height:420px;position:relative;}
-@media(max-width:768px){.hs-img{display:none;}}
-.hs-img img{height:100%;max-height:420px;width:auto;object-fit:contain;object-position:bottom;}
+.hs-img{display:none;}
 .hs-bg-deco{position:absolute;inset:0;pointer-events:none;}
-.hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.85);border:none;border-radius:50%;width:44px;height:44px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:.2s;color:var(--green-dark);}
-.hero-prev{left:16px;}
-.hero-next{right:16px;}
-.hero-prev:hover,.hero-next:hover{background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.2);}
+.hero-prev,.hero-next{flex-shrink:0;z-index:10;background:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:.2s;color:var(--green-dark);}
+.hero-prev:hover,.hero-next:hover{background:var(--bg2);box-shadow:0 4px 18px rgba(0,0,0,.2);}
+@media(max-width:480px){.hero-prev,.hero-next{width:30px;height:30px;font-size:12px;}}
 .hero-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;}
 .h-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.22);cursor:pointer;border:none;transition:.2s;}
 .h-dot.on{background:var(--green-mid);width:22px;border-radius:4px;}
@@ -305,11 +312,14 @@ img{max-width:100%;display:block;}
 .st-label{position:relative;z-index:2;color:#fff;font-weight:700;font-size:12.5px;padding:12px;text-transform:uppercase;letter-spacing:.5px;}
 
 /* ====== POOJA BANNER ====== */
-.pooja-banner{background:linear-gradient(135deg,#2E1A0E,#5A2D0C,#8B4513);border-radius:14px;padding:32px 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.pooja-banner{position:relative;border-radius:14px;overflow:hidden;min-height:240px;display:flex;align-items:center;}
+.pooja-banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.pooja-banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,8,2,0.72) 0%,rgba(20,8,2,0.35) 60%,transparent 100%);}
+.pj-content{position:relative;z-index:2;padding:36px 40px;}
 .pj-content h2{font-family:'Playfair Display',serif;font-size:28px;color:#FFD700;margin-bottom:8px;}
 .pj-content p{color:#f0c080;font-size:14px;max-width:340px;margin-bottom:20px;}
-.pj-icons{display:flex;gap:16px;font-size:42px;opacity:.8;}
-.pj-icons i{color:#FFD700;}
+.pj-icons{display:none;}
+@media(max-width:600px){.pj-content{padding:28px 20px;}.pj-content h2{font-size:22px;}}
 
 /* ====== NEWSLETTER ====== */
 .newsletter{background:var(--green-dark);color:#fff;padding:40px 20px;text-align:center;}
@@ -502,9 +512,9 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 .founder-section{background:linear-gradient(135deg,#1a3a0a 0%,#2e4a0e 50%,#1a3a0a 100%);padding:64px 20px;position:relative;overflow:hidden;}
 .founder-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
 .founder-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
-@media(max-width:800px){.founder-inner{grid-template-columns:1fr;gap:36px;text-align:center;}}
+@media(max-width:800px){.founder-inner{grid-template-columns:1fr;gap:28px;text-align:center;}}
 .founder-images{position:relative;height:440px;}
-@media(max-width:800px){.founder-images{height:320px;max-width:380px;margin:0 auto;}}
+@media(max-width:800px){.founder-images{height:280px;max-width:100%;margin:0 auto;}}
 .founder-img-main{position:absolute;bottom:0;left:0;width:70%;height:90%;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.15);}
 .founder-img-main img{width:100%;height:100%;object-fit:cover;object-position:top;}
 .founder-img-secondary{position:absolute;top:0;right:0;width:48%;height:58%;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.45);border:3px solid rgba(255,255,255,0.15);}
@@ -827,69 +837,54 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 
 <!-- Hero Slider — Full Width -->
 <div class="hero-wrap">
+  <button class="hero-prev" onclick="goSlide((slideIdx-1+3)%3)"><i class="fa-solid fa-chevron-left"></i></button>
+
   <div class="hero-slider" id="heroSlider">
 
-    <!-- Slide 1 -->
-    <div class="hero-slide on" style="background:linear-gradient(120deg,#FFF3DC 0%,#FEE8B0 55%,#f5d97a 100%);">
-      <div class="hs-content">
-        <div class="hs-tag"><i class="fa-solid fa-fire"></i> Monsoon Wellness Sale</div>
-        <h1>The Ayurveda<br>Wellness Store</h1>
-        <div class="hs-disc">UPTO 40% OFF</div>
-        <button class="btn-hero" onclick="scrollSec('flashSection')"><i class="fa-solid fa-bag-shopping"></i> Shop Now</button>
-      </div>
-      <div class="hs-img">
-        <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=600&h=500&fit=crop&crop=center" alt="Ayurvedic Wellness" onerror="this.style.display='none'">
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="hero-slide" style="background:linear-gradient(120deg,#e8f5e9 0%,#c8e6c9 55%,#a5d6a7 100%);">
+    <!-- Slide 1: Madhunashni Diabetes Care -->
+    <div class="hero-slide on">
+      <img class="hero-slide-bg" src="https://static.wixstatic.com/media/7fa905_83b7cf56b26047e3a398f568145dc106~mv2.png" alt="Divya Madhunashni Diabetes Care">
+      <div class="hero-slide-overlay"></div>
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-star"></i> Bestseller</div>
         <h1>Divya Madhunashni<br>For Diabetes Care</h1>
         <div class="hs-disc">Rs.299 <small>Rs.399</small></div>
         <button class="btn-hero" onclick="openProduct(0)"><i class="fa-solid fa-eye"></i> View Product</button>
       </div>
-      <div class="hs-img">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=500&fit=crop&crop=center" alt="Diabetes Care" onerror="this.style.display='none'">
-      </div>
     </div>
 
-    <!-- Slide 3 — Build Your Own Box style -->
-    <div class="hero-slide" style="background:linear-gradient(120deg,#fce4ec 0%,#f8bbd9 40%,#fdd9b5 100%);">
+    <!-- Slide 2: Build Your Own Box -->
+    <div class="hero-slide">
+      <img class="hero-slide-bg" src="https://static.wixstatic.com/media/7fa905_09c770b1bace488ea2d1be01092a574c~mv2.png" alt="Build Your Own Box Combo">
+      <div class="hero-slide-overlay"></div>
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-box-open"></i> Special Combo</div>
         <h1>Build Your<br>Own Box</h1>
         <div class="hs-disc">at ₹999 <small>only</small></div>
         <button class="btn-hero" onclick="showAll()"><i class="fa-solid fa-bag-shopping"></i> Shop Any 3</button>
       </div>
-      <div class="hs-img">
-        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=500&fit=crop&crop=center" alt="Combo Box" onerror="this.style.display='none'">
-      </div>
     </div>
 
-    <!-- Slide 4 -->
-    <div class="hero-slide" style="background:linear-gradient(120deg,#f3e5f5 0%,#e1bee7 55%,#ce93d8 100%);">
+    <!-- Slide 3: Aastha Pooja Collection -->
+    <div class="hero-slide">
+      <img class="hero-slide-bg" src="https://static.wixstatic.com/media/7fa905_a437ba8f26794242b034bdfd6dc55965~mv2.png" alt="Aastha Premium Pooja Collection">
+      <div class="hero-slide-overlay"></div>
       <div class="hs-content">
         <div class="hs-tag"><i class="fa-solid fa-hands-praying"></i> Pooja Essentials</div>
         <h1>Aastha Premium<br>Pooja Collection</h1>
         <div class="hs-disc">Starting Rs.49</div>
         <button class="btn-hero" onclick="showCat('pooja')"><i class="fa-solid fa-bag-shopping"></i> Shop Pooja</button>
       </div>
-      <div class="hs-img">
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&h=500&fit=crop&crop=center" alt="Pooja Collection" onerror="this.style.display='none'">
-      </div>
     </div>
 
-    <button class="hero-prev" onclick="goSlide((slideIdx-1+4)%4)"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="hero-next" onclick="goSlide((slideIdx+1)%4)"><i class="fa-solid fa-chevron-right"></i></button>
     <div class="hero-dots">
       <button class="h-dot on" onclick="goSlide(0)"></button>
       <button class="h-dot" onclick="goSlide(1)"></button>
       <button class="h-dot" onclick="goSlide(2)"></button>
-      <button class="h-dot" onclick="goSlide(3)"></button>
     </div>
   </div>
+
+  <button class="hero-next" onclick="goSlide((slideIdx+1)%3)"><i class="fa-solid fa-chevron-right"></i></button>
 </div>
 
 <!-- Flash Deals -->
@@ -1053,12 +1048,13 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
 <!-- Pooja Banner -->
 <div class="section">
   <div class="pooja-banner">
+    <img class="pooja-banner-bg" src="https://i.ibb.co/WN07gjRv/Aastha-Pooja-Collection-display.png" alt="Aastha Pooja Collection">
+    <div class="pooja-banner-overlay"></div>
     <div class="pj-content">
       <h2>Aastha Pooja Collection</h2>
       <p>Bring divine fragrance and purity to your home with our premium Dhoop Batti, Agar Batti, Pure Cow Ghee and Havan Samgri — crafted with authentic herbs.</p>
       <button class="btn-hero" onclick="showCat('pooja')"><i class="fa-solid fa-fire-flame-curved"></i> Shop Pooja Essentials</button>
     </div>
-    <div class="pj-icons" style="flex:0 0 260px;height:200px;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.35)"><img src="https://i.ibb.co/WN07gjRv/Aastha-Pooja-Collection-display.png" alt="Aastha Pooja Collection" style="width:100%;height:100%;object-fit:cover;"></div>
   </div>
 </div>
 
@@ -1069,7 +1065,7 @@ footer{background:#1a2a08;color:#cdd8b0;padding:44px 20px 20px;}
     <!-- Images -->
     <div class="founder-images">
       <div class="founder-img-main">
-        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=700&fit=crop&crop=top" alt="Founder Name - Founder">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&h=700&fit=crop&crop=top" alt="Founder - Divya Ayurveda">
       </div>
       <div class="founder-img-secondary">
         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=360&fit=crop&crop=center" alt="Ayurvedic Herbs Laboratory">
@@ -2079,7 +2075,7 @@ function closeWishlist(){document.getElementById('wishlistBar').classList.remove
 // ========================
 // HERO SLIDER
 // ========================
-const TOTAL_SLIDES = 4;
+const TOTAL_SLIDES = 3;
 function goSlide(n){
   n = ((n % TOTAL_SLIDES) + TOTAL_SLIDES) % TOTAL_SLIDES;
   document.querySelectorAll('.hero-slide').forEach((s,i)=>s.classList.toggle('on',i===n));
